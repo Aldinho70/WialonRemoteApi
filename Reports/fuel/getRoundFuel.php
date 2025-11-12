@@ -3,15 +3,21 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header('Content-Type: application/json; charset=utf-8');
 
+$fromParam = $_GET['from'] ?? null;
+$toParam   = $_GET['to'] ?? null;
+$idunit  = $_GET['idUnit'] ?? null; 
+
 // === CONFIGURACIÓN ===
 $token = "733a7307cd0dd55c139f57fcaa9269d33033EF2588751D51ECB53AA291A5B6501EF5426B"; // <-- Reemplace con su token válido
 $reportResourceId = 28675002; // ID del recurso donde está la plantilla
 $reportTemplateId = 19;       // ID de la plantilla
-$objectId = 29566197;         // ID de la unidad o grupo
+$objectId = $idunit;         // ID de la unidad o grupo
 
 // Intervalo de fechas (UNIX timestamps)
-$from = strtotime("2025-10-01 00:00:00");
-$to   = strtotime("2025-11-01 00:00:00");
+// $from = strtotime("2025-10-01");
+// $to   = strtotime("2025-11-01");
+$from = strtotime($fromParam);
+$to   = strtotime($toParam);
 
 // === FUNCIÓN GENÉRICA DE LLAMADA A WIALON ===
 function callWialon($svc, $params, $sid = null) {
