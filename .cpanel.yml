@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/dv4i40wm3rs9/public_html/wialonRemoteApi.com/
+    - /bin/cp -r * $DEPLOYPATH
