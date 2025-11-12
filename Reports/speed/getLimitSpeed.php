@@ -6,7 +6,7 @@ header('Content-Type: application/json; charset=utf-8');
 // === CONFIGURACIÓN ===
 $token = "733a7307cd0dd55c139f57fcaa9269d33033EF2588751D51ECB53AA291A5B6501EF5426B"; // <-- Reemplace con su token válido
 $reportResourceId = 28675002; // ID del recurso donde está la plantilla
-$reportTemplateId = 19;       // ID de la plantilla
+$reportTemplateId = 1;       // ID de la plantilla
 $objectId = 29566197;         // ID de la unidad o grupo
 
 // Intervalo de fechas (UNIX timestamps)
@@ -75,7 +75,13 @@ if ($totalRows > 0) {
 
         $processedRows[] = [
             "unidad" => $c[1] ?? null, // nombre de la unidad
-            "rendimiento" => $c[4] ?? null, // objeto con dirección y coordenadas
+            "ubicacion" => $c[3] ?? null, // objeto con dirección y coordenadas
+            "exceso_velocidad" => [
+                "registrado" => $c[6] ?? null,       // velocidad que excede
+                "extra"      => $c[7] ?? null,       // dato extra (vacío)
+                "veces"      => $c[8] ?? null,       // veces que excedió
+                "max_permitida" => $c[9] ?? null     // velocidad máxima permitida
+            ]
         ];
     }
 } else {
