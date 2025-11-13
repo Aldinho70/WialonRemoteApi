@@ -1,4 +1,11 @@
 <?php
+// Permitir solicitudes desde cualquier origen
+header("Access-Control-Allow-Origin: *");
+// Permitir métodos GET y POST
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+// Permitir headers personalizados si los necesitas
+header("Access-Control-Allow-Headers: Content-Type");
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header('Content-Type: application/json; charset=utf-8');
