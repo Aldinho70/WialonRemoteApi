@@ -15,7 +15,7 @@ $toParam   = $_GET['to'] ?? null;
 $idunit  = $_GET['idUnit'] ?? null; 
 
 // === CONFIGURACIÓN ===
-$token = "733a7307cd0dd55c139f57fcaa9269d33033EF2588751D51ECB53AA291A5B6501EF5426B"; // <-- Reemplace con su token válido
+$token = "733a7307cd0dd55c139f57fcaa9269d3F2C3174113FA868A9CA730A6B29A073E52098058"; // <-- Reemplace con su token válido
 $reportResourceId = 28675002; // ID del recurso donde está la plantilla
 $reportTemplateId = 1;       // ID de la plantilla
 $objectId = $idunit;         // ID de la unidad o grupo
